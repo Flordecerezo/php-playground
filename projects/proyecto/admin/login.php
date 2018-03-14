@@ -1,25 +1,25 @@
 <?php
 session_start();
 include('../config.php');
-print_r($_POST);
-$email = $_POST['email'];
-$password = md5($_POST["password"]);
 
-$query ="SELECT * FROM usuario WHERE email='$email' AND password='$password'";
-$result = mysqli_query($mysqli, $query);
-$count = mysqli_num_rows($result);
-
-if ($count == 1) {
-    $_SESSION['canAccess'] = true;
-    header('Location: dashboard.php');
-    exit;
-}else{
-    $_SESSION['canAccess'] = false;
-    
-    
+if (!empty($_POST)) {
+  $email = $_POST['email'];
+  $password = md5($_POST["password"]);
+  
+  $query ="SELECT * FROM usuario WHERE email='$email' AND password='$password'";
+  $result = mysqli_query($mysqli, $query);
+  $count = mysqli_num_rows($result);
+  
+  if ($count == 1) {
+      $_SESSION['canAccess'] = true;
+      header('Location: dashboard.php');
+      exit;
+  } else {
+      $_SESSION['canAccess'] = false;          
+  }
+  
 }
 
-mysqli_close($mysqli);
 ?>
 
 
@@ -41,7 +41,7 @@ mysqli_close($mysqli);
   </head>
 
   <body class="text-center">
-    <form  action="POST" class="form-signin">
+    <form  method="post" class="form-signin">
       <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Email address</label>

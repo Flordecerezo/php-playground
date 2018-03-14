@@ -19,7 +19,31 @@ CREATE TABLE producto (
   nombre VARCHAR(100) NOT NULL,
   precio DOUBLE NOT NULL,
   codigo_fabricante INT UNSIGNED NOT NULL,
+  imagen VARCHAR(256) NOT NULL,
+  descripcion VARCHAR(512) NOT NULL,
   FOREIGN KEY (codigo_fabricante) REFERENCES fabricante(codigo)
 );
 
 INSERT INTO usuario VALUES (1, 'usuario@usuario.es', 'f8032d5cae3de20fcec887f395ec9a6a', 'Usuario');
+
+INSERT INTO fabricante VALUES(1,'Asus');
+INSERT INTO fabricante VALUES(2,'Lenovo');
+INSERT INTO fabricante VALUES(3,'Hewlett-Packard');
+INSERT INTO fabricante VALUES(4,'Samsung');
+INSERT INTO fabricante VALUES(5,'Seagate');
+INSERT INTO fabricante VALUES(6,'Crucial');
+INSERT INTO fabricante VALUES(7,'Gigabyte');
+INSERT INTO fabricante VALUES(8,'Huawei');
+INSERT INTO fabricante VALUES(9,'Xiaomi');
+
+INSERT INTO producto VALUES(1,'Disco duro SATA3 1TB', 86, 5, 'images/disco.jpg', ' Dispositivo interno de almacenamiento magnetico sellado al vacio* o relleno con gas Helio, que lee y graba bits a base de bobinas electromagneticas (cabezas de lectura/escritura), sobre discos especiales que giran a alta velocidad constante, densamente recubiertos de particulas ferrosas microscopicas.');
+INSERT INTO producto VALUES(2,'Memoria RAM DDR4 8GB', 120, 6, 'images/memoria.jpg', 'Se trata de el estandar desarrollado inicialmente por la firma Samsung® para el uso con nuevas tecnologias. Al igual que sus antecesoras, se basa en el uso de tecnologia tipo DRAM (RAM de celdas construidas a base de capacitores), cuentan con 288 terminales, las cuales estan especializadas para las ranuras de las tarjetas principales (Motherboard) de nueva generacion con soporte Intel® Haswell-E (X99).');
+INSERT INTO producto VALUES(3,'Disco SSD 1 TB', 150, 4, 'images/disco2.jpg', 'bla bla...');
+INSERT INTO producto VALUES(4,'GeForce GTX 1050Ti',185, 7, 'images/geforce.jpg', 'bla bla...');
+INSERT INTO producto VALUES(5,'GeForce GTX 1080 Xtreme',755, 6, 'images/geforce2.jpg', 'bla bla...');
+INSERT INTO producto VALUES(6,'Monitor 24 LED Full HD',202, 1, 'images/monitor.jpg', 'bla bla...');
+INSERT INTO producto VALUES(7,'Monitor 27 LED Full HD',245, 1, 'images/monitor2.jpg', 'bla bla...');
+INSERT INTO producto VALUES(8,'Portatil Yoga 520',559, 2, 'images/portatil.jpg', 'bla bla...');
+INSERT INTO producto VALUES(9,'Portatil Ideapd 320',444, 2, 'images/portatil2.jpg', 'bla bla...');
+INSERT INTO producto VALUES(10,'Impresora HP Deskjet 3720',59, 3, 'images/impresora.jpg', 'bla bla...');
+INSERT INTO producto VALUES(11,'Impresora HP Laserjet Pro M26nw',180, 3, 'images/impresora2.jpg', 'bla bla...');
