@@ -2,7 +2,7 @@
 include_once("config.php");
 
 $codigo = $_GET['codigo'];
-echo "<h1>$codigo</h1>";
+//echo "<h1>$codigo</h1>";
 //exit;
 
 $query = "SELECT * FROM producto where codigo=$codigo";
@@ -14,19 +14,20 @@ $result = mysqli_query($mysqli, $query);
 <head>
 	<meta charset="UTF-8">
 	<title>Tienda</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
 </head>
 <a href="index.php"> Volver </a>
 <body>
 
-	<table width='80%' border=0>
+	<table width='80%' height='20%' border=5 bordercolor='green' style="text-align:center;">
 
-	<tr bgcolor='#CCCCCC'>
-		<td>Imagen</td>
-		<td>Codigo</td>
-		<td>Nombre</td>
-		<td>Precio</td>
-		<td>Fabricante</td>
-		<td>Descripción</td>
+	<tr bgcolor='red'>
+		<td><font color='white'>Imagen</font></td>
+		<td><font color='yellow'>Codigo</font></td>
+		<td><font color='blue'>Nombre</font></td>
+		<td><font color='grey'>Precio</font></td>
+		<td><font color='pink'>Fabricante</font></td>
+		<td><font color='brown'>Descripción</font></td>
         <!--<td>Enlace</td>-->
 	</tr>
 
